@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito | aCoupon</title>
+    <link rel="stylesheet" href="/css/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <button id="backButton">
+            <img src="/assets/back.webp" alt="Volver a inicio">
+        </button>
+        <h1 id="headerTitle">Tu Carrito</h1>
+    </header>
+    <main>
+        <div id="cartItems"></div>
+        <div class="add-more" id="add-more">Seguir explorando</div>
+        <div id="cartSummary">
+            <p><span class="dollar-sign">$</span><span id="totalPrice">0</span></p>
+            <button id="confirmButton">Ir a envío</button>
+        </div>
+    </main>
+    <script src="/js/cart.js" defer></script>
+    <script>
+        function goToIndex() {
+            window.location.href = '/';
+        }
+
+        document.getElementById('add-more').addEventListener('click', function () {
+            goToIndex()
+        });
+    </script>
+</body>
+
+</html>

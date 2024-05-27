@@ -1,0 +1,210 @@
+body {
+    font-family: 'GIR';
+    padding: 0;
+    margin: 0;
+    background-color: #F4F1EA;
+}
+
+@font-face {
+    font-family: 'GIR';
+    src: url('/assets/Questrial.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'GIB';
+    src: url('/assets/GIB.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+  }
+
+.cart-item {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.quantity-control button, .quantity-control input {
+    padding: 5px 10px;
+    font-family: 'GIB';
+    font-size: 1.3em;
+    border: none;
+}
+
+.quantity-control input {
+    width: 50px;
+    text-align: center;
+}
+
+.fa-trash {
+    color: rgb(133, 3, 3);
+}
+
+.talla-zona {
+    font-family: 'GIR';
+    width: 100%;
+    height: 2vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.talla {
+    font-weight: bold; /* Hace que el texto de las tallas sea negrita */
+    font-family: 'GIB';
+    margin-right: 7px;
+    font-size: 5.5vw;
+}
+
+.concepto {
+    font-style: italic; /* Hace que el texto de los conceptos sea en cursiva */
+    color: rgb(97, 97, 97); /* Pone el texto de los conceptos en gris para diferenciarlo */
+    font-family: 'GIR';
+    margin-right: 30px;
+    font-size: 4vw;
+}
+
+.title-zona {
+    width: 100%;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    font-family: 'GIB';
+    font-size: 1.3em;
+    color: #59373F;
+}
+
+.quantity-zona {
+    height: 100%;
+    width: 34%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(249, 222, 185);
+    border-radius: 15px;
+}
+
+.quantity {
+    width: 12vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'GIB';
+    font-size: 1.4em;
+}
+
+button {
+    border: none;
+    background: none;
+}
+
+.price {
+    font-family: 'GIB';
+    color: #FF4E78;
+    font-size: 1.7em;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #9F0237, #C80949);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    
+  }
+
+  #backButton {
+    position: absolute;
+    left: 1px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+  } 
+
+  #headerTitle {
+    font-size: 26px;
+    font-family: 'GIR';
+    color: white;
+  }
+
+  button img {
+    height: 4vh;
+  }
+
+  #cartSummary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #9F0237, #C80949);
+    position: fixed;
+    width: 100vw;
+    height: 11vh;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  #totalPrice {
+    font-size: 39px; /* Tamaño de fuente adecuado para el precio total */
+    color: #fdeaef;
+    font-family: 'GIB';
+  }
+  
+  #confirmButton {
+    background-color: #500013; /* Un color verde distintivo para el botón */
+    color: white;
+    border-radius: 15px;
+    cursor: pointer; /* Cursor en forma de mano al pasar sobre el botón */
+    margin-right: 25px;
+    height: 60%;
+    width: 40%;
+    font-family: 'GIR';
+    font-size: 1.3em;
+  }
+
+  .dollar-sign {
+    font-family: 'GIB';
+    font-size: 15px;
+    color: #fdeaef;
+    margin-left: 25px;
+    margin-right: 3px;
+  }
+  
+  .add-more {
+    width: 100%;
+    height: 7vh;
+    background: linear-gradient(135deg, #a8e6cf, #dcedc1, #a8d0e6);
+    margin-top: 25px;
+    position: fixed;
+    bottom: 11vh;
+    left: 0;
+    right: 0;
+    box-shadow: 0 -1px 5px rgba(0,0,0,0.2); /* Sombra para dar efecto de elevación */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'GIR';
+    font-size: 23px;
+    color: black;
+  }

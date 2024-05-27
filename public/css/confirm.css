@@ -1,0 +1,106 @@
+/* styles.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'GIR';
+    height: 100%;
+  }
+
+  @font-face {
+    font-family: 'GIR';
+    src: url('/assets/Questrial.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'GIB';
+    src: url('/assets/Questrial.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  .confirmation-page {
+    color: white;
+    text-align: center;
+    padding: 20px;
+    height: 100%;
+    background: linear-gradient(to right, #ed6ea0 0%, #ec8c69 100%); /* Establece un gradiente lineal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .confirmation-icon {
+    font-size: 48px;
+    animation: spin 1s linear, fadeIn 1s ease-out;
+    width: 30vw;
+    height: 15vh;
+    background: linear-gradient(to bottom, #00000016, rgba(255, 255, 255, 0.078)); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 100%;
+  }
+  
+
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  h1, p {
+    animation: fadeIn 2s ease-out;
+  }
+  
+  .details {
+    text-align: center;
+    padding: 0 20px;
+    animation: slideIn 2s ease-out;
+    background: linear-gradient(to bottom, #00000016, rgba(255, 255, 255, 0.078));
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.277);
+    margin-top: 5vh;
+    font-size: 4.5vw;
+    width: 80vw;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  h1 {
+    font-family: 'GIB';
+    margin-bottom: 0;
+    font-size: 25px;
+  }
+
+  img {
+    width: 40%;
+  }
+
+
+  i {
+    margin-right: 8px;
+    opacity: 0.3;
+  }
+  
+  .cedula-disclaimer {
+    margin-top: 25px;
+    color: rgba(255, 255, 255, 0.834);
+  }
+  

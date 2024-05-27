@@ -1,0 +1,230 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #F4F1EA;
+    font-family: 'GIR';
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'GIR';
+    src: url('/assets/Questrial.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GIB';
+    src: url('/assets/GIB.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+form {
+    padding: 20px;
+    border-radius: 20px;
+    width: 85%;
+    margin: auto;
+    box-shadow: 0px 4px 14px rgba(75, 75, 75, 0.239);
+}
+
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: 'GIB';
+    font-size: 22px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    font-size: 18px;
+    font-family: 'GIB';
+    margin-bottom: 20px;
+    height: 6vh;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    font-size: 18px;
+    font-family: 'GIB';
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.177);
+    background-color:#ffffff;
+    height: 6vh;
+    color: black;
+}
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    /* Ajusta el padding según tus necesidades */
+    height: 8vh;
+}
+
+header a {
+    color: #c71585;
+    /* Color del ícono de retroceso */
+}
+
+header .title {
+    font-size: 24px;
+    /* Tamaño del título */
+    text-align: center;
+    flex-grow: 1;
+    font-family: 'GIB';
+    /* Asegura que el título se centre adecuadamente */
+}
+
+
+  .payment-info {
+    background: linear-gradient(135deg, #f8c3e5, #a3d8f4);
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(39, 0, 38, 0.488);
+    font-family: 'GIR';
+  }
+
+  .payment-info i {
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+    color: rgba(0, 0, 0, 0.65);
+  }
+
+  .final-zone {
+    width: 100%;
+    height: 18vh;
+  }
+
+  .envio {
+    background: linear-gradient(135deg, #f8c3e5, #a3d8f4);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 9.5vh;
+    box-sizing: border-box;
+    height: 6.5vh;
+    font-family: 'GIR';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .price-zone {
+    width: 60%;
+    height: 9vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'GIR';
+    color: #ffecf1;
+    font-size: 40px;
+  }
+
+  .dollar-sign {
+    font-family: 'GIR';
+    color: #ffeaef;
+    font-size: 20px;
+    margin-right: 4px;
+  }
+
+  .envio-title {
+    font-family: 'GIR';
+    color: #0000009b;
+    font-size: 18px;
+  }
+
+  .envio-price{
+    font-family: 'GIR';
+    color: #000000;
+    font-size: 25px;
+    margin-right: 10px;
+  }
+
+  .dollar-one {
+    font-family: 'GIR';
+    color: #000000;
+    font-size: 16px;
+    margin-right: 3px;
+  }
+
+  .button-zone {
+    background: linear-gradient(135deg, #720026, #C80949);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    height: 9.5vh;
+    font-family: 'GIR';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  button {
+    width: 38%;
+    height: 95%;
+    border-radius: 20px;
+    background-color: #580015;
+    border: none;
+    color: white;
+    font-family: 'GIR';
+    font-size: 4.8vw;
+  }
+
+button:hover {
+    background-color: #9c0665;
+}
+
+.observancia {
+  color: rgb(0, 0, 0);
+  width: 80vw;
+  height: 8vh;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(39, 0, 38, 0.201);
+  font-family: 'GIR';
+  margin-bottom: 30px;
+}
+
+::placeholder {
+  font-family: 'GIR';
+}
+
+form img {
+  font-family: 'GIR';
+  margin-top: 0;
+  color: #0000005b;
+}

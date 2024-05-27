@@ -1,0 +1,562 @@
+@font-face {
+    font-family: 'GIR';
+    src: url('/assets/Questrial.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'GIB';
+    src: url('/assets/GIB.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F4F1EA;
+}
+
+header {
+    color: white; /* Texto blanco para contrastar con el fondo verde */
+    padding: 20px 15px; /* Añade algo de espacio alrededor del contenido del header */
+    display: flex; /* Usa flexbox para alinear los elementos dentro del header */
+    align-items: center; /* Centra los elementos verticalmente */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos del header */
+    height: 2vh;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 188, 199);
+    width: 37px;
+    height: 37px;
+    border-radius: 100%;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3); 
+}
+
+/* Estilos para el enlace de regreso */
+.header-left a {
+    display: inline-flex; /* Mantiene el enlace en línea y permite el alineamiento flex */
+    align-items: center; /* Centra el icono de regreso verticalmente */
+    text-decoration: none; /* Remueve el subrayado del enlace */
+    color: white; /* Establece el color del texto del enlace a blanco */
+}
+
+.header-left img {
+    width: 35px; /* Altura específica para la imagen del botón de regreso */
+    margin-right: 10px; /* Espacio a la derecha del icono para separarlo de otros elementos si los hay */
+}
+
+.name-zone {
+    width: 100%;
+    height: 6vh;
+    display: flex;
+    flex-direction: row;
+}
+
+h1 {
+    font-family: 'GIB';
+    font-size: 1.4em;
+    margin-left: 3vw;
+}
+
+h2 {
+    font-family: 'GIR';
+    font-size: 1.2em;
+    margin-left: 2vw;
+    color: rgb(47, 47, 47);
+}
+
+.image-scroll-container {
+    overflow-x: auto; /* Habilita el desplazamiento horizontal si el contenido excede el ancho del contenedor */
+    overflow-y: hidden; /* Oculta la barra de desplazamiento vertical */
+    white-space: nowrap; /* Mantiene todos los elementos de imagen en una sola línea */
+    padding: 20px 0; /* Espacio superior e inferior para el contenedor */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.image-scroll-container::-webkit-scrollbar {
+    display: none; /* Oculta la barra de desplazamiento para Chrome, Safari y Opera */
+}
+
+.image-scroll-container-indi {
+    display: flex;
+    justify-content: center;
+    align-items: center;/* Mantiene todos los elementos de imagen en una sola línea */
+    padding: 20px 0; /* Espacio superior e inferior para el contenedor *  /* Firefox */
+}
+
+.image-scroll img {
+    display: inline-block; /* Muestra las imágenes en línea y permite el desplazamiento */
+    width: auto; /* Ancho fijo para cada imagen */
+    height: 30vh; /* Altura automática para mantener la proporción */
+    margin-right: 3px; /* Espacio entre imágenes */
+    margin-left: 3px; /* Espacio entre imágenes */
+    border-radius: 10px; /* Bordes redondeados opcionalmente */
+    border: 1px solid #B8860B;
+}
+
+.image-scroll-limited img {
+    display: inline-block; /* Muestra las imágenes en línea y permite el desplazamiento */
+    width: auto; /* Ancho fijo para cada imagen */
+    height: 30vh; /* Altura automática para mantener la proporción */
+    margin-right: 3px; /* Espacio entre imágenes */
+    margin-left: 3px; /* Espacio entre imágenes */
+    border-radius: 10px; /* Bordes redondeados opcionalmente */
+    border: 1px solid #B8860B;
+    background-color: #FFEFCA;
+}
+
+.selection-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0 0;
+    padding-left: 5vw;
+}
+
+.selection-area-indi {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0;
+}
+
+.size-selection, .color-selection {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.size-selection p, .color-selection p {
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-right: 10vw;
+    font-family: 'GIB';
+}
+
+.options {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.option  {
+    padding: 8px;
+    border: 1px solid #1f1f1f28;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 17px;
+}
+
+.color-option {
+    padding: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 15px;
+}
+
+.option {
+    width: 7vw;
+    height: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'GIR';
+    font-size: 1.2em;
+}
+
+.option.selected {
+    background-color: #000000;
+    color: white;
+    border-color: #000000;
+    font-family: 'GIB';
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.782);
+}
+
+.color-option.selected {
+    background-color: #00d5ff;
+    color: white;
+    border: 1px solid #00aaff;
+    border-width: 4px;
+    font-family: 'GIB';
+}
+
+.color-option {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.price-area {
+    width: 100vw;
+    height: 7vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.price-area img {
+    height: 70%;
+    width: auto;
+    margin-right: 4vw;
+}
+
+.purchase-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: #a97902; /* Color de fondo azul */
+    color: white; /* Texto blanco */
+    font-family: 'GIB';
+    text-align: center; /* Centra el contenido del botón */
+    padding: 15px 0; /* Espacio arriba y abajo dentro del botón */
+    font-size: 1.5em; /* Tamaño del texto */
+    border: none; /* Sin borde */
+    width: 100%; /* Asegura que el botón ocupe todo el ancho disponible */
+    cursor: pointer; /* Cursor en forma de mano al pasar el ratón */
+    border-radius: 0; /* Bordes sin redondear para que ocupe toda la parte inferior */
+    transition: background-color 0.3s; /* Transición suave al cambiar color */
+}
+
+
+.purchase-bar-limited {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #9F0237, #C80949); /* Color de fondo */
+    color: white; /* Texto blanco */
+    font-family: 'GIB';
+    text-align: center; /* Centra el contenido del botón */
+    font-size: 1.5em; /* Tamaño del texto */
+    border: none; /* Sin borde */
+    width: 100%; /* Asegura que el botón ocupe todo el ancho disponible */
+    cursor: default; /* Cambiado de pointer a default */
+    border-radius: 0; /* Bordes sin redondear para que ocupe toda la parte inferior */
+    transition: background-color 0.3s; /* Transición suave al cambiar color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 17vw;
+    -webkit-tap-highlight-color: transparent; /* Quita el efecto de resaltado en Android */
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 75%;
+    width: 40%;
+    background-color: #450000;
+    border-radius: 25px;
+    color: white;
+    margin-right: 13px;
+    font-family: 'GIR';
+    border: 1px solid rgba(255, 255, 255, 0.322);
+}
+
+.quantity-button {
+    color: #ffffff;
+    border: none;
+    font-size: 1em;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #00aaff00;
+    transition: opacity 0.3s; /* Transición para opacidad */
+    -webkit-tap-highlight-color: transparent; /* Quita el efecto de resaltado en Android */
+}
+
+.quantity-button:active {
+    opacity: 0.5; /* Opacidad momentánea */
+}
+
+#quantity {
+    font-size: 1em;
+    margin: 0 10px;
+    color: #ffffff;
+    font-family: 'GIR';
+}
+
+.purchase-button {
+    width: 50%;
+    height: 75%;
+    background-color: #500013;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-family: 'GIR';
+}
+
+.purchase-bar-limited:active,
+.purchase-bar-limited *:active {
+    background-color: initial; /* Elimina el color azul al hacer clic */
+    outline: none; /* Elimina el borde de enfoque */
+}
+
+
+
+.info-area {
+    height: 160vh;
+    background-color: rgb(247, 206, 213);
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+    flex-direction: column;
+    padding-top: 7px;
+}
+
+.info-area-duos {
+    height: 260vh;
+    background-color: rgb(247, 206, 213);
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+    flex-direction: column;
+    padding-top: 7px;
+}
+
+.scroll-container {
+    min-width: 0; /* Asegura que el contenedor pueda ser más pequeño que su contenido */
+    display: flex; /* Alinea los elementos horizontalmente */
+    overflow-x: auto; /* Permite el desplazamiento horizontal */
+    scrollbar-width: none; /* Oculta la barra de desplazamiento en Firefox */
+    -ms-overflow-style: none; /* Oculta la barra de desplazamiento en IE y Edge */
+    height: 14vh;
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none; /* Oculta la barra de desplazamiento en Chrome, Safari y Opera */
+}
+
+.item {
+    flex: 0 0 auto; /* No permite que el item crezca o se encoga */
+    width: 38vw; /* Ancho de cada div, según tus especificaciones */
+    height: 12vh; /* Altura de cada div, según tus especificaciones */
+    margin-right: 20px; /* Espacio entre los divs */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: rgb(253, 216, 222);
+    border: 1px solid rgba(180, 29, 54, 0.242);
+    word-wrap: normal;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(180, 29, 54, 0.242);
+    overflow: visible;
+}
+
+.item img {
+    height: 90%;
+}
+
+.material {
+    font-size: 1.6em;
+    font-family: 'GIR';
+}
+
+.title1 {
+    font-size: 1.3em;
+    font-family: 'GIR';
+}
+
+.title2 {
+    font-size: 1.1em;
+    color: rgba(0, 0, 0, 0.837);
+    font-family: 'GIR';
+}
+
+span {
+    font-size: 0.6em;
+    color: rgba(0, 0, 0, 0.837);
+    font-family: 'GIB';
+}
+
+.info-area-title {
+    font-size: 1.3em;
+    font-family: 'GIB';
+    color: rgba(0, 0, 0, 0.66);
+}
+
+.dollar {
+    font-family: 'GIR';
+    color: #FF4E78;
+    font-size: 1.1em;
+}
+
+.final-price {
+    font-family: 'GIB';
+    color: #FF4E78;
+    font-size: 2.8em;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+.separador {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 218, 254, 0);
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.tabla {
+    width: 83vw;
+    box-shadow: 3px 7px 25px rgba(0, 0, 0, 0.227);
+    border-radius: 10px;
+}
+
+.tabla-title {
+    font-family: 'GIB';
+    color: rgb(0, 0, 0);
+    font-size: 1.2em;
+}
+
+.modal-background {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+}
+
+/* Estilo para la imagen en pantalla completa */
+.fullscreen-image {
+    position: absolute;
+    max-width: 80%; /* Reducido del 90% para dar más espacio */
+    max-height: 80%; /* Reducido del 90% para dar más espacio */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(255, 222, 228); /* Fondo blanco para imágenes PNG */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 10px; /* Espacio alrededor de la imagen dentro del fondo blanco */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave para destacar la imagen */
+}
+
+/* Botones de navegación */
+.nav-button {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 11; /* Asegura que las flechas estén sobre la imagen */
+    width: 40px; /* Tamaño del fondo circular */
+    height: 40px; /* Tamaño del fondo circular */
+    background-color: rgba(255, 162, 177, 0.925); /* Fondo negro con algo de transparencia */
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    border-radius: 50%; /* Hace el fondo completamente circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0; /* Elimina el padding adicional */
+    margin-top: 0; /* Ajusta la posición vertical centrada */
+}
+
+/* Botón derecho para siguiente imagen */
+.nav-button.right {
+    right: 10px; /* Espacio desde el borde derecho del contenedor */
+}
+
+/* Botón izquierdo para imagen anterior */
+.nav-button.left {
+    left: 10px; /* Espacio desde el borde izquierdo del contenedor */
+}
+
+.commentary-title {
+    font-family: 'GIR';
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.commentary {
+    background: linear-gradient(135deg, #fff6f69e, #feecf27d);/* Color de fondo de la burbuja de comentario */
+    border-radius: 25px; /* Bordes redondeados */
+    padding: 15px; /* Espacio interno de la burbuja */
+    margin-bottom: 20px; /* Espacio entre comentarios */
+    display: flex;
+    flex-direction: column;
+    width: 90%; /* Ajusta el ancho según tus necesidades */
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para darle un poco de profundidad */
+}
+
+.date-stars {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; /* Espacio entre la fecha/estrellas y el comentario */
+    height: 3vh;
+}
+
+.date {
+    font-size: 14px;
+    color: #666666e7; /* Color del texto de la fecha */
+    font-family: 'GIR';
+    font-size: 1.2em;
+    text-decoration: underline;
+}
+
+.comment {
+    font-family: 'GIR';
+    font-size: 20px;
+    color: #000000;
+    word-wrap: break-word; /* Asegura que el texto se ajuste al contenedor */
+    overflow-wrap: break-word; /* Permite romper las palabras para ajustarlas al contenedor */
+}
+
+.tabla:last-child {
+    margin-bottom: 20px;
+}
+
+.separador-dos {
+    width: 90vw;
+    height: 5vh;
+}
+
+.no-commentary {
+    width: 100%;
+    height: 6vh;
+    background-color: #bcbcbc1a;
+    border: 1px solid rgba(0, 0, 0, 0.666);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'GIR';
+    font-size: 5vw;
+}
+
+.date-stars img {
+    height: 80%;
+    width: auto;
+    border-radius: 0;
+    margin-bottom: 1.2vh;
+}
+
