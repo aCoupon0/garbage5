@@ -24,10 +24,13 @@ const UsuarioSchema = new mongoose.Schema({
 });
 const Usuario = mongoose.model('Usuario', UsuarioSchema);
 
-// Conexión a MongoDB
+// Conexión a MongoDB con tiempos de espera aumentados
 mongoose.connect(uri, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  serverSelectionTimeoutMS: 50000, // 50 segundos
+  socketTimeoutMS: 45000, // 45 segundos
+  connectTimeoutMS: 30000, // 30 segundos
 })
 .then(() => console.log('Conectado a MongoDB'))
 .catch(err => console.error('Error al conectar a MongoDB', err));
