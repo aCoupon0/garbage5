@@ -10,6 +10,8 @@ const path = require('path');
 const PORT = process.env.PORT || 3000;
 const uri = "mongodb+srv://gabrielparisbaquero:hAdb8Hfv9K5ZIGW3@acoupondb.lbsmw2g.mongodb.net/?retryWrites=true&w=majority&appName=aCouponDB"
 
+app.use(sslRedirect());
+
 
 // Definición del modelo Usuario con Mongoose
 const UsuarioSchema = new mongoose.Schema({
