@@ -10,19 +10,9 @@ const path = require('path');
 const PORT = process.env.PORT || 3000;
 const uri = "mongodb+srv://gabrielparisbaquero:hAdb8Hfv9K5ZIGW3@acoupondb.lbsmw2g.mongodb.net/?retryWrites=true&w=majority&appName=aCouponDB"
 
+// Middleware de redirección SSL
+const sslRedirect = require('heroku-ssl-redirect');
 app.use(sslRedirect());
-
-
-// Definición del modelo Usuario con Mongoose
-const UsuarioSchema = new mongoose.Schema({
-  cedula: { type: String, required: true },
-  celular: { type: String, required: true },
-  direccion: { type: String, required: true },
-  ciudad: { type: String, required: true },
-  cartData: { type: String, required: true }, // Campo para los datos del carrito
-  precioFinal: { type: Number, required: true } // Precio final incluyendo el envío
-});
-const Usuario = mongoose.model('Usuario', UsuarioSchema);
 
 // Conexión a MongoDB con tiempos de espera aumentados
 mongoose.connect(uri, {
@@ -38,10 +28,19 @@ mongoose.connect(uri, {
 // Middleware para analizar el cuerpo de las solicitudes usando express.urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/data', express.static('public/data'));
-
 // Middleware para servir archivos estáticos desde el directorio 'public'
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Definición del modelo Usuario con Mongoose
+const UsuarioSchema = new mongoose.Schema({
+  cedula: { type: String, required: true },
+  celular: { type: String, required: true },
+  direccion: { type: String, required: true },
+  ciudad: { type: String, required: true },
+  cartData: { type: String, required: true }, // Campo para los datos del carrito
+  precioFinal: { type: Number, required: true } // Precio final incluyendo el envío
+});
+const Usuario = mongoose.model('Usuario', UsuarioSchema);
 
 // Rutas para servir páginas HTML
 app.get('/', (req, res) => {
@@ -75,7 +74,9 @@ app.post('/guardar-palabra', async (req, res) => {
       cartData: req.body.cartData,
       precioFinal: req.body.precioFinal
     });
-    const resultado = await nuevoUsuario.save();
+
+    // Guardar con tiempo máximo de espera
+    const resultado = await nuevoUsuario.save({ maxTimeMS: 50000 });
     console.log(resultado);
     res.redirect('/confirm');
   } catch (error) {
