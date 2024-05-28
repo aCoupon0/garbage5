@@ -74,10 +74,10 @@ app.post('/guardar-palabra', async (req, res) => {
     });
     const resultado = await nuevoUsuario.save();
     console.log(resultado);
-    res.redirect('/confirm'); // Redirige al usuario a la página de confirmación
+    res.redirect('/confirm');
   } catch (error) {
     console.error('Error al guardar los datos en la base de datos:', error);
-    res.status(500).send('Error al guardar los datos en la base de datos.');
+    res.status(500).send(`Error al guardar los datos en la base de datos: ${error.message}`);
   }
 });
 
