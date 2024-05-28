@@ -10,15 +10,6 @@ const path = require('path');
 const PORT = process.env.PORT || 3000;
 const uri = "mongodb+srv://gabrielparisbaquero:hAdb8Hfv9K5ZIGW3@acoupondb.lbsmw2g.mongodb.net/?retryWrites=true&w=majority&appName=aCouponDB"
 
-// Middleware para redirigir HTTP a HTTPS
-function ensureSecure(req, res, next){
-    if(req.secure){
-        // Si la solicitud es segura, proceder
-        return next();
-    };
-    // Si no es segura, redirigir a HTTPS
-    res.redirect('https://' + req.headers.host + req.url);
-}
 
 // Usar el middleware para redirigir HTTP a HTTPS
 app.use(ensureSecure);
